@@ -1,6 +1,6 @@
 <?php
 
-require 'src/Facebook/autoload.php';
+include 'index.php';
 session_start();
 
 $fb = new Facebook\Facebook([
@@ -10,7 +10,11 @@ $fb = new Facebook\Facebook([
   ]);
 
 $helper = $fb->getRedirectLoginHelper();
-$permissions = ['email']; // Optional permissions
+$permissions = array(
+  'email',
+  'user_location',
+  'user_birthday'
+);
 $loginUrl = $helper->getLoginUrl('http://mdpu-finance.com/app-facebook/fb-callback.php', $permissions);
 
 echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
