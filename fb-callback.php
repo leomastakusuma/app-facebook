@@ -2,7 +2,7 @@
 
 
 require 'src/Facebook/autoload.php';
-
+session_start();
 $fb = new Facebook\Facebook([
   'app_id' => '1673188132913490',
   'app_secret' => '6e435fefb77a7972eeceb10dd81df0cb',
