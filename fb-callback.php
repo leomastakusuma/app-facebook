@@ -86,7 +86,7 @@ try {
 $user = $response->getGraphUser();
 
 
-$users = $response->getGraphObject(GraphUser::className());
+$users = $response->getGraphObject();
         
         
 print_r($users);
