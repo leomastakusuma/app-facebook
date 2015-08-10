@@ -1,5 +1,6 @@
 <?php
 
+require 'src/Facebook/autoload.php';
 session_start();
 
 $fb = new Facebook\Facebook([
