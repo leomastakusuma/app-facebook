@@ -83,8 +83,10 @@ try {
   echo 'Facebook SDK returned an error: ' . $e->getMessage();
   exit;
 }
-
 $user = $response->getGraphUser();
+echo $user->getBirthday();
+echo $user->getGender();
+echo $response->getBirthday();
 print_r($user);
 
 print_r($response);
