@@ -86,7 +86,10 @@ try {
 $user = $response->getGraphUser();
 
 
-print_r($response);
+$users = $response->getGraphObject(GraphUser::className());
+        
+        
+print_r($users);
 
 // User is logged in with a long-lived access token.
 // You can redirect them to a members-only page.
