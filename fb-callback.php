@@ -84,10 +84,7 @@ try {
   exit;
 }
 $user = $response->getGraphUser();
-echo $user->getBirthday();
-echo $user->getGender();
-echo $response->getBirthday();
-print_r($user);
+
 
 print_r($response);
 
