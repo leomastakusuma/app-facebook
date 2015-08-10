@@ -6,7 +6,7 @@ require 'src/Facebook-4.4/autoload.php';
 $app_id             = '1673188132913490';  //Facebook App ID
 $app_secret         = '6e435fefb77a7972eeceb10dd81df0cb'; //Facebook App Secret
 $required_scope     = 'public_profile, publish_actions, email'; //Permissions required
-$redirect_url       = 'http://mdpu-finance.com/app-facebook/login.php'; //FB redirects to this page with a code
+$redirect_url       = 'http://mdpu-finance.com/app-facebook'; //FB redirects to this page with a code
 
 //include autoload.php from SDK folder, just point to the file like this:
 
