@@ -51,7 +51,8 @@ echo '<h3>Metadata</h3>';
 print_r($tokenMetadata);
 
 // Validation (these will throw FacebookSDKException's when they fail)
-$tokenMetadata->validateAppId($config['1673188132913490']);
+#$tokenMetadata->validateAppId($config['1673188132913490']);
+$tokenMetadata->validateAppId('1673188132913490');
 // If you know the user ID this access token belongs to, you can validate it here
 //$tokenMetadata->validateUserId('123');
 $tokenMetadata->validateExpiration();
