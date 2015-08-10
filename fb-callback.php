@@ -84,7 +84,7 @@ try {
   exit;
 }
 $user = $response->getGraphUser();
-
+echo $user->getFirstName();
 
 $users = $response->getGraphObject();
 echo  $users->getProperty('email');       
