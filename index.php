@@ -1,6 +1,5 @@
 <?php
 
-include 'index.php';
 session_start();
 
 $fb = new Facebook\Facebook([
