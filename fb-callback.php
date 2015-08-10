@@ -74,7 +74,8 @@ $_SESSION['fb_access_token'] = (string) $accessToken;
 
 try {
   // Returns a `Facebook\FacebookResponse` object
-  $response = $fb->get('/me?fields=id,name,email', $accessToken);
+  #$response = $fb->get('/me?fields=id,name,email', $accessToken);
+  $response = $fb->get('/me?fileds=public_profile', $accessToken);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   echo 'Graph returned an error: ' . $e->getMessage();
   exit;
@@ -84,13 +85,8 @@ try {
 }
 
 $user = $response->getGraphUser();
-
 print_r($user);
 
-$user_details = "https://graph.facebook.com/me?access_token=" .$accessToken;
-
-$response = file_get_contents($user_details);
-$response = json_decode($response);
 print_r($response);
 
 // User is logged in with a long-lived access token.
