@@ -111,5 +111,5 @@ try {
 }
 
 $plainOldArray = $response->getDecodedBody();
-print_r($plainOldArray);
+print_r($response);
 echo 'Logged in as ' . $me->getName();
