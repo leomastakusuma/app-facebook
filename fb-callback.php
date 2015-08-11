@@ -103,5 +103,7 @@ try {
 }
 
 $me = $response->getGraphUser();
+$session = $response->getGraphSessionInfo();
+print_r($session);
 print_r($me);
 echo 'Logged in as ' . $me->getName();
