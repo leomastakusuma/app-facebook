@@ -12,9 +12,7 @@ $fb = new Facebook\Facebook([
 
 $helper = $fb->getRedirectLoginHelper();
 $permissions = array(
-  'email',
-  'user_location',
-  'user_birthday'
+  'email'
 );
 $loginUrl = $helper->getLoginUrl('http://mdpu-finance.com/app-facebook/fb-callback.php', $permissions);
 
