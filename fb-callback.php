@@ -1,7 +1,7 @@
 <?php
 
 
-require 'src/Facebook/autoload.php';
+require 'src/Facebook-fixed/autoload.php';
 session_start();
 $fb = new Facebook\Facebook([
   'app_id' => '1673188132913490',
@@ -69,7 +69,7 @@ if (! $accessToken->isLongLived()) {
   echo '<h3>Long-lived</h3>';
   var_dump($accessToken->getValue());
 }
-
+print_r($tokenMetadata->getField( $field ));
 $_SESSION['fb_access_token'] = (string) $accessToken;
 
 try {
@@ -85,3 +85,23 @@ try {
 
 $user = $response->getGraphUser();
 print_r($user);
+echo '<br>';
+echo 'new test';
+
+try {
+  // Get the Facebook\GraphNodes\GraphUser object for the current user.
+  // If you provided a 'default_access_token', the '{access-token}' is optional.
+  $response = $fb->get('/me',$accessToken );
+} catch(Facebook\Exceptions\FacebookResponseException $e) {
+  // When Graph returns an error
+  echo 'Graph returned an error: ' . $e->getMessage();
+  exit;
+} catch(Facebook\Exceptions\FacebookSDKException $e) {
+  // When validation fails or other local issues
+  echo 'Facebook SDK returned an error: ' . $e->getMessage();
+  exit;
+}
+
+$me = $response->getGraphUser();
+print_r($me);
+echo 'Logged in as ' . $me->getName();
