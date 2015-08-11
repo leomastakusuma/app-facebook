@@ -102,14 +102,8 @@ try {
   exit;
 }
 
-$me = $response->getGraphUser();
-try {
-  $response = $fb->get('/me');
-} catch(Facebook\Exceptions\FacebookSDKException $e) {
-  // . . .
-  exit;
-}
-
 $plainOldArray = $response->getDecodedBody();
 print_r($response);
+$me = $response->getGraphUser();
+
 echo 'Logged in as ' . $me->getName();
