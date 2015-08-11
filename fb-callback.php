@@ -103,7 +103,7 @@ try {
 }
 
 $plainOldArray = $response->getDecodedBody();
-print_r($response);
+print_r($plainOldArray);
 $me = $response->getGraphUser();
 
 echo 'Logged in as ' . $me->getName();
