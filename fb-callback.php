@@ -75,6 +75,7 @@ $_SESSION['fb_access_token'] = (string) $accessToken;
 try {
   // Returns a `Facebook\FacebookResponse` object
   $response = $fb->get('/me', $accessToken);
+  $pemis = $fb->get('permission',$accessToken);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   echo 'Graph returned an error: ' . $e->getMessage();
   exit;
@@ -86,6 +87,7 @@ try {
 $user = $response->getGraphUser();
 print_r($user);
 echo '<br>';
+print_r($pemis);
 echo 'new test';
 
 try {
