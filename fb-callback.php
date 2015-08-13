@@ -69,13 +69,12 @@ if (! $accessToken->isLongLived()) {
   echo '<h3>Long-lived</h3>';
   var_dump($accessToken->getValue());
 }
-print_r($tokenMetadata->getField( $field ));
 $_SESSION['fb_access_token'] = (string) $accessToken;
 
 try {
   // Returns a `Facebook\FacebookResponse` object
   $response = $fb->get('/me', $accessToken);
-  $users = $response->getGraphUser();
+
   
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   echo 'Graph returned an error: ' . $e->getMessage();
@@ -88,13 +87,12 @@ try {
 $user = $response->getGraphUser();
 print_r($user);
 echo '<br>';
-print_r($pemis);
-echo 'new test';
+
 
 try {
   // Get the Facebook\GraphNodes\GraphUser object for the current user.
   // If you provided a 'default_access_token', the '{access-token}' is optional.
-  $response = $fb->get('/me/permission',$accessToken );
+  $response = $fb->get('/me/friends',$accessToken );
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
