@@ -107,4 +107,4 @@ $plainOldArray = $response->getDecodedBody();
 print_r($plainOldArray);
 $me = $response->getGraphUser();
 
-echo 'Logged in as ' . $me->getName();
+echo 'Logged in sas ' . $me->getName();
