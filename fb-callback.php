@@ -89,22 +89,5 @@ print_r($user);
 echo '<br>';
 
 
-try {
-  // Get the Facebook\GraphNodes\GraphUser object for the current user.
-  // If you provided a 'default_access_token', the '{access-token}' is optional.
-  $response = $fb->get('/me/friends',$accessToken );
-} catch(Facebook\Exceptions\FacebookResponseException $e) {
-  // When Graph returns an error
-  echo 'Graph returned an error: ' . $e->getMessage();
-  exit;
-} catch(Facebook\Exceptions\FacebookSDKException $e) {
-  // When validation fails or other local issues
-  echo 'Facebook SDK returned an error: ' . $e->getMessage();
-  exit;
-}
 
-$plainOldArray = $response->getDecodedBody();
-print_r($plainOldArray);
-$me = $response->getGraphUser();
-
-echo 'Logged in sas ' . $me->getName();
+echo 'Logged in sas ' . $user->getName();
