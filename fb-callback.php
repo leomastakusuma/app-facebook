@@ -73,7 +73,7 @@ $_SESSION['fb_access_token'] = (string) $accessToken;
 
 try {
   // Returns a `Facebook\FacebookResponse` object
-  $response = $fb->get('/me?fields=birthday,name,email', $accessToken);
+  $response = $fb->get('/me?fields=birthday,name,email,gender', $accessToken);
 
   
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
@@ -85,10 +85,13 @@ try {
 }
 
 $user = $response->getGraphUser();
-print_r($response);
+//print_r($response);
 print_r($user);
 echo '<br>';
 
 
 
 echo 'Logged in sas ' . $user->getName();
+echo '<br/>Email '.$user->getBirthday();
+echo '<br/>Male'.$user->getGender();
+echo '<br/>Email'.$user->getField('email');
