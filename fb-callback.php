@@ -86,6 +86,7 @@ try {
 
 $user = $response->getGraphUser();
 print_r($response);
+print_r($user);
 echo '<br>';
 
 
