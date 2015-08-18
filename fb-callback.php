@@ -6,7 +6,7 @@ session_start();
 $fb = new Facebook\Facebook([
   'app_id' => '1673188132913490',
   'app_secret' => '6e435fefb77a7972eeceb10dd81df0cb',
-  'default_graph_version' => 'v2.0',
+  'default_graph_version' => 'v2.2',
   ]);
 
 $helper = $fb->getRedirectLoginHelper();
@@ -73,7 +73,7 @@ $_SESSION['fb_access_token'] = (string) $accessToken;
 
 try {
   // Returns a `Facebook\FacebookResponse` object
-  $response = $fb->get('/me', $accessToken);
+  $response = $fb->get('/me?fields=birthday,name,email', $accessToken);
 
   
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
