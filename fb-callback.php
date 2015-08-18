@@ -92,6 +92,6 @@ echo '<br>';
 
 
 echo 'Logged in sas ' . $user->getName();
-echo '<br/>Email '.$user->getBirthday();
+echo '<br/>BirtDays ';print_r($user->getBirthday())
 echo '<br/>Male'.$user->getGender();
 echo '<br/>Email'.$user->getField('email');
